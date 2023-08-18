@@ -2,9 +2,9 @@ import React, { useState } from "react"
 import "./index.css"
 
 const messages = [
-  "Learn React ⚛️",
-  "Apply for jobs 💼",
-  "Invest your new income 🤑",
+  "Order the product📦",
+  "It is packed and send for delivery🚛",
+  "You receive the Product😉",
 ]
 const App = () => {
   const [step, setstep] = useState(1)
