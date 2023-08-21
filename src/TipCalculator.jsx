@@ -13,7 +13,7 @@ function onreset()
     SetPercentage2(0)
 }
    return(<>
-   <div className='accordion'>
+   <div className='consumer'>
    
    <BillInput Bill={Bill} onSetBill={setBill} />
    <SelectPercentage percentage={percentage1} onSelect={SetPercentage1} >How was your experience</SelectPercentage>

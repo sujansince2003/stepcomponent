@@ -5,6 +5,7 @@
 * {
   box-sizing: border-box;
   font-size: 30px;
+ 
 }
 
 body {
@@ -155,4 +156,16 @@ h3 {
 .open .number,
 .open .title {
   color: #087f5b;
+}
+
+.consumer
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.counter{
+  text-align: center;
 }

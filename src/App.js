@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./index.css";
 import Faq from "./Faq";
 import TipCalculator from "./TipCalculator";
+import Datecounter from "./Datecounter";
 
 const messages = [
   "Order the product📦",
@@ -54,6 +55,8 @@ const App = () => {
       )}
       <Faq />
       <TipCalculator />
+      <div>Date counter</div>
+      <Datecounter />
     </>
   );
 };
