@@ -1,6 +1,7 @@
-import React, { Component,useState } from 'react';
+import React, {useState } from 'react';
 
 const TipCalculator = () => {
+    
     const [Bill,setBill]=useState("");
     const [percentage1,SetPercentage1]=useState(0)
     const [percentage2,SetPercentage2]=useState(0)
@@ -12,6 +13,7 @@ function onreset()
     SetPercentage2(0)
 }
    return(<>
+   <div className='accordion'>
    
    <BillInput Bill={Bill} onSetBill={setBill} />
    <SelectPercentage percentage={percentage1} onSelect={SetPercentage1} >How was your experience</SelectPercentage>
@@ -24,7 +26,7 @@ function onreset()
     </>
 }
    
-  
+</div>
    </>)
 
 
@@ -36,9 +38,9 @@ const BillInput=({Bill,onSetBill})=>
 {
     return(
         <>
-        <label>How much is the Bill Amount</label> 
+        <label>How much is the Bill Amount?</label> 
           <input type="text" value={Bill} onChange={(e)=>onSetBill(e.target.value)}  />
-          <br />
+          
         </>
     )
 }
@@ -46,11 +48,11 @@ const SelectPercentage=({children,percentage,onSelect})=>
 {
     return(
         <>
-         <br />
+         
         <label>{children}</label>
-        <br />
+     
       <select value={percentage} onChange={(e)=>onSelect(Number(e.target.value))} >
-        
+         
         <option value="0">Not Satisfied(0%)</option>
         <option value="10">okay(5%)</option>
         <option value="15">better(10%)</option>
@@ -66,7 +68,7 @@ const Output=({Bill,Tip})=>
     return(
         <>
         
-        <h3>You will pay {Number(Bill) + Tip}  ({Bill} +{Tip} )</h3>
+        <h3>You will pay NRS. {Number(Bill) + Tip}  ({Bill} +{Tip} Tip Amt )</h3>
         </>
     )
 }
