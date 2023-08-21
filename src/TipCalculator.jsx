@@ -1,16 +1,30 @@
 import React, { Component,useState } from 'react';
 
 const TipCalculator = () => {
-    const [Bill,setBill]=useState("")
-
+    const [Bill,setBill]=useState("");
+    const [percentage1,SetPercentage1]=useState(0)
+    const [percentage2,SetPercentage2]=useState(0)
+    const Tip=Bill *((percentage1+percentage2)/200);
+function onreset()
+{
+    setBill("")
+    SetPercentage1(0)
+    SetPercentage2(0)
+}
    return(<>
    
    <BillInput Bill={Bill} onSetBill={setBill} />
-   <SelectPercentage>How was your experience</SelectPercentage>
-   <SelectPercentage>How was your friend  experience</SelectPercentage>
+   <SelectPercentage percentage={percentage1} onSelect={SetPercentage1} >How was your experience</SelectPercentage>
+   <SelectPercentage percentage={percentage2} onSelect={SetPercentage2}>How was your friend  experience</SelectPercentage>
+
+{
+    Bill>0 && <>
+     <Output Bill={Bill} Tip={Tip} />
+   <Reset onreset={onreset} />
+    </>
+}
    
-   <Output Bill={Bill} />
-   <Reset />
+  
    </>)
 
 
@@ -28,37 +42,38 @@ const BillInput=({Bill,onSetBill})=>
         </>
     )
 }
-const SelectPercentage=({children})=>
+const SelectPercentage=({children,percentage,onSelect})=>
 {
     return(
         <>
          <br />
         <label>{children}</label>
         <br />
-      <select >
-        <option value="0">Not Satisfied</option>
-        <option value="10">okay</option>
-        <option value="15">better</option>
-        <option value="20">Best</option>
+      <select value={percentage} onChange={(e)=>onSelect(Number(e.target.value))} >
+        
+        <option value="0">Not Satisfied(0%)</option>
+        <option value="10">okay(5%)</option>
+        <option value="15">better(10%)</option>
+        <option value="20">Best(15%)</option>
 
 
       </select>
         </>
     )
 }
-const Output=({Bill})=>
+const Output=({Bill,Tip})=>
 {
     return(
         <>
         
-        <h3>You will pay {Bill} (x+y tip )</h3>
+        <h3>You will pay {Number(Bill) + Tip}  ({Bill} +{Tip} )</h3>
         </>
     )
 }
-const Reset=()=>
+const Reset=({onreset})=>
 {
     return(<>
-    <button>Reset</button>
+    <button onClick={onreset} >Reset</button>
     </>)
 }
 
