@@ -1,6 +1,7 @@
 import React, { Component,useState } from 'react';
 
 const TipCalculator = () => {
+    
    return(<>
    
    <BillInput />
