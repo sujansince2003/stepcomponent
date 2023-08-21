@@ -55,8 +55,12 @@ const App = () => {
       )}
       <Faq />
       <TipCalculator />
-      <div>Date counter</div>
-      <Datecounter />
+      <div style={{ marginTop: "50px" }}>
+        <div style={{ textAlign: "center", fontSize: "40px" }}>
+          Date counter
+        </div>
+        <Datecounter />
+      </div>
     </>
   );
 };
