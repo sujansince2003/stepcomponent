@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
-import Card from "./Card";
+import Faq from "./Faq";
 
 const messages = [
   "Order the product📦",
@@ -13,7 +13,6 @@ const App = () => {
 
   return (
     <>
-      <Card />
       <button
         onClick={() => {
           setisOpen(() => !isOpen);
@@ -52,6 +51,7 @@ const App = () => {
           </div>
         </div>
       )}
+      <Faq />
     </>
   );
 };
