@@ -1,20 +1,22 @@
-import React, { useState } from "react"
-import "./index.css"
+import React, { useState } from "react";
+import "./index.css";
+import Card from "./Card";
 
 const messages = [
   "Order the product📦",
   "It is packed and send for delivery🚛",
   "You receive the Product😉",
-]
+];
 const App = () => {
-  const [step, setstep] = useState(1)
-  const [isOpen, setisOpen] = useState(true)
+  const [step, setstep] = useState(1);
+  const [isOpen, setisOpen] = useState(true);
 
   return (
     <>
+      <Card />
       <button
         onClick={() => {
-          setisOpen(() => !isOpen)
+          setisOpen(() => !isOpen);
         }}
         className="close"
       >
@@ -33,7 +35,7 @@ const App = () => {
           <div className="buttons">
             <button
               onClick={() => {
-                setstep(() => (step > 1 ? step - 1 : step))
+                setstep(() => (step > 1 ? step - 1 : step));
               }}
               style={{ backgroundColor: "#7950f2", color: "white" }}
             >
@@ -41,7 +43,7 @@ const App = () => {
             </button>
             <button
               onClick={() => {
-                setstep(() => (step < 3 ? step + 1 : step))
+                setstep(() => (step < 3 ? step + 1 : step));
               }}
               style={{ backgroundColor: "#7950f2", color: "white" }}
             >
@@ -51,7 +53,7 @@ const App = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
