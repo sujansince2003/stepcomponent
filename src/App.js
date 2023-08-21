@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import Faq from "./Faq";
+import TipCalculator from "./TipCalculator";
 
 const messages = [
   "Order the product📦",
@@ -52,6 +53,7 @@ const App = () => {
         </div>
       )}
       <Faq />
+      <TipCalculator />
     </>
   );
 };
